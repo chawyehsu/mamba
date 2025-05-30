@@ -707,7 +707,7 @@ namespace mamba
         auto has_prefix = util::get_env("CONDA_PREFIX");
         if (m_context.auto_activate_base && !has_prefix.has_value())
         {
-            builder << get_self_exe_path().stem() << " activate base\n";
+            builder << get_self_exe_path().stem().string() << " activate base\n";
         }
         builder << hook_postamble() << "\n";
         return builder.str();
